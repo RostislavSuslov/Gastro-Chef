@@ -1,1 +1,105 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(./assets/fonts/Comfortaa-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./assets/fonts/Comfortaa-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(./assets/fonts/Comfortaa-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(./assets/fonts/Montserrat-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(./assets/fonts/Montserrat-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(./assets/fonts/Montserrat-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./assets/fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
+@theme {
+    --color-green-400: #64D370; /* :hover */
+    --color-green-500: #26f03a;  /* 10% - #26f03a1a */
+    --color-green-600: #3D9646;  /* :active */
+    --color-blue-100:  #F5FAFF;
+    --color-blue-200:  #DEE6EE;
+    --color-red-400: #F87676;
+    --color-red-500: #FE3666;
+    --color-gray-950: #020202;
+
+    --font-comfortaa: Comfortaa, sans-serif;
+    --font-montserrat: Montserrat, sans-serif;
+
+    --container-6xl: calc(73.75rem + 120px);
+    --container-2xl: calc(43.125rem + 40px);  
+    /* --container-3xs: 16.5rem; */
+ 
+/* 
+    --container-5xl: calc(73.75rem + 30px);
+    --container-4xl: calc(73.75rem + 30px);
+    --container-3xl: calc(73.75rem + 30px); 
+
+    <div class="shadow-md ..."></div>
+    <div class="shadow-lg ..."></div>
+    <div class="shadow-xl ..."></div>  */
+}
+
+/* .logo {
+    position: relative;
+    &::before {
+        content: '232';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 264px;
+        height: 264px;
+        background-color: #F5FAFF;
+        box-shadow: 0 0 40px 0 #5656564d;
+        z-index: -10;
+        border-radius: 50%;
+    }
+} */
+
+ .active {
+    background-color: rgb(57, 255, 57);
+ }
