@@ -1,3 +1,4 @@
+import './main.scss'
 import './style.css'
 
 const burger = document.querySelector('#burger')
