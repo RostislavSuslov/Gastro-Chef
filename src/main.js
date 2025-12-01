@@ -5,32 +5,25 @@ import 'swiper/css/bundle';
 
 const burger = document.querySelector('#burger')
 const mobileContainer = document.querySelector('#mobile-container')
-const body =document.querySelector('body')
+const body = document.querySelector('body')
 
-burger.addEventListener('click', ()=> {
+burger.addEventListener('click', () => {
     burger.classList.toggle('is-active')
     mobileContainer.classList.toggle('hidden')
     body.classList.toggle('overflow-hidden')
 })
 
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 4,
+    },
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 });

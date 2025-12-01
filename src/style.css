@@ -80,6 +80,11 @@
     --shadow-lg: 0 0 30px 0 #5656564d;
     --shadow-xl: 0 0 40px 0 #5656564d;
 
+
+     
+    --text-40px: 40px;
+    --text-35px: 35px;
+    --text-26px: 26px;
     --text-3xs: 8px;
     --text-2xs: 10px;
 }
@@ -144,3 +149,9 @@
 .burger__icon:after {
     top: 14px;
 }
+
+.swiper {
+    height: 800px;
+}
+
+ 
