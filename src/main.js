@@ -19,8 +19,7 @@ const swiper = new Swiper('.swiper', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        dynamicBullets: false,
-        dynamicMainBullets: 4,
+ 
 
         renderBullet: function (index, className) {
             return `
@@ -32,9 +31,6 @@ const swiper = new Swiper('.swiper', {
             </div>`;
         }
     },
-
- /* 2πr = 31.4 */
- 
 
     navigation: {
         nextEl: '.swiper-button-next',
