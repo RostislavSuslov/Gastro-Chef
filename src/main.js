@@ -40,8 +40,8 @@ const swiper = new Swiper('.swiper', {
 
 const languageItem = document.querySelectorAll('.language-item')
 
-function remuveActiveClasses() {
-    languageItem.forEach(function(item) {
+function removeActiveClassesLanguagesPanel() {
+    languageItem.forEach(function (item) {
         item.classList.remove('bg-green-400')
         item.classList.remove('text-blue-300')
     })
@@ -56,10 +56,64 @@ function remuveActiveClasses() {
 
 
 languageItem.forEach(function (element) {
-    element.addEventListener('click', function(event) {
+    element.addEventListener('click', function (event) {
         event.preventDefault()
-        remuveActiveClasses()
+        removeActiveClassesLanguagesPanel()
         element.classList.add('bg-green-400')
         element.classList.add('text-blue-300')
     })
 })
+
+
+const categoryLink = document.querySelectorAll('.category-link')
+
+function removeActiveClassesCategoryNav() {
+    categoryLink.forEach(function (item) {
+        item.classList.add('lg:w-17.5')
+        item.classList.add('w-10.25')
+        item.classList.remove('lg:w-auto')
+        item.classList.remove('md:w-auto')
+        item.classList.remove('text-green-400')
+        item.querySelector('span').classList.add('hidden')
+    })
+}
+
+categoryLink.forEach(function (item) {
+    item.addEventListener('click', function (event) {
+        event.preventDefault()
+        removeActiveClassesCategoryNav()
+
+        item.classList.remove('lg:w-17.5')
+        item.classList.remove('w-10.25')
+        item.classList.add('lg:w-auto')
+        item.classList.add('md:w-auto')
+        item.classList.add('text-green-400')
+        item.querySelector('span').classList.remove('hidden')
+    })
+
+
+})
+
+
+
+// const link = document.querySelector('.category-link');
+
+// categoryLink.forEach(function (item) {
+//     document.addEventListener('click', (event) => {
+//         const withinBoundaries = event.composedPath().includes(item);
+//         console.log(withinBoundaries);
+        
+//         if (!withinBoundaries) {
+//             removeActiveClassesCategoryNav()
+//         }
+//     })
+// })
+
+
+// document.addEventListener('click', (event) => {
+//     const withinBoundaries = event.composedPath().includes(link);
+
+//     if (!withinBoundaries) {
+//         removeActiveClassesCategoryNav()
+//     }
+// })
