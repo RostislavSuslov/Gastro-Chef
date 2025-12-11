@@ -48,8 +48,16 @@ function remuveActiveClasses() {
 }
 
 
+
+
+
+
+
+
+
 languageItem.forEach(function (element) {
-    element.addEventListener('click', function() {
+    element.addEventListener('click', function(event) {
+        event.preventDefault()
         remuveActiveClasses()
         element.classList.add('bg-green-400')
         element.classList.add('text-blue-300')
