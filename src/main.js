@@ -55,3 +55,18 @@ languageItem.forEach(function (element) {
         element.classList.add('text-blue-300')
     })
 })
+
+
+const items = document.querySelectorAll('.circle a');
+
+for(var i = 0, l = items.length; i < l; i++) {
+  items[i].style.left = (50 - 35*Math.cos(-0.5 * Math.PI + 1*(0.5/l)*i*Math.PI)).toFixed(4) + "%";
+  items[i].style.bottom = (50 + 35*Math.sin(-0.5 * Math.PI + 1*(0.5/l)*i*Math.PI)).toFixed(4) + "%";
+}
+
+const feedbackButton = document.querySelector('#feedback-button')
+console.log(feedbackButton);
+
+feedbackButton.addEventListener('click', function() {
+    feedbackButton.classList.toggle('active')
+})

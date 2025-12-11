@@ -74,10 +74,10 @@
             left: 50%;
             transform: translate(-50%, -50%);
 
-         
+
         }
     }
-    
+
     .swiper-button-prev,
     .swiper-button-next {
         top: calc(50% + 1px);
@@ -105,7 +105,7 @@
 
     .swiper-pagination-bullet {
         --size: 19.6px;
-        margin: 0  2px;
+        margin: 0 2px;
         width: var(--size);
         height: var(--size);
         background: transparent;
@@ -151,4 +151,58 @@
 
 .bullet-svg .inner {
     transition: stroke-dashoffset 0.5s;
+}
+
+
+
+/*feedback-button*/
+#feedback-button {
+    &.active {
+        .circle {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+}
+
+.circular-menu {
+    width: 15.625rem;
+    height: 15.625rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.circle {
+    width: 15.625rem;
+    height: 15.625rem;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+
+
+.circle a {
+
+
+    position: absolute;
+
+    background-color: black;
+}
+
+
+.menu-button {
+    position: absolute;
+    top: calc(50% - 1.875rem);
+    left: calc(50% - 1.875rem);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50%;
+    display: block;
 }
