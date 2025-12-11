@@ -15,11 +15,21 @@ burger.addEventListener('click', function() {
 
 const swiper = new Swiper('.swiper', {
     loop: true,
+    speed: 500,
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        dynamicBullets: false,
-        dynamicMainBullets: 4,
+
+
+        renderBullet: function (index, className) {
+            return `
+            <div class="${className} flex justify-center items-center cursor-pointer">
+                <svg viewBox="0 0 14 14" class="bullet-svg">
+                    <circle class="outer" r="5" cx="50%" cy="50%" fill="transparent" stroke="var(--color-green-400)" stroke-width="2"></circle>
+                    <circle class="inner" r="5" cx="50%" cy="50%" fill="transparent" stroke="var(--color-blue-200)" stroke-width="2" stroke-dasharray="31.4" stroke-dashoffset="31.4"></circle>
+                </svg>
+            </div>`;
+        }
     },
 
     navigation: {
@@ -28,23 +38,20 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
+const languageItem = document.querySelectorAll('.language-item')
 
-// Demo by http://creative-punch.net
-
-const items = document.querySelectorAll('.circle a');
-
-for(var i = 0, l = items.length; i < l; i++) {
-  items[i].style.left = (50 - 35*Math.cos(-0.5 * Math.PI + 1*(0.5/l)*i*Math.PI)).toFixed(4) + "%";
-  items[i].style.bottom = (50 + 35*Math.sin(-0.5 * Math.PI + 1*(0.5/l)*i*Math.PI)).toFixed(4) + "%";
+function remuveActiveClasses() {
+    languageItem.forEach(function(item) {
+        item.classList.remove('bg-green-400')
+        item.classList.remove('text-blue-300')
+    })
 }
 
-// document.querySelector('.menu-button').onclick = function(e) {
-//    e.preventDefault(); document.querySelector('.circle').classList.toggle('open');
-// }
 
-
-const feedbackButton = document.querySelector('#feedback-button')
-
-feedbackButton.addEventListener('click', function() {
-    feedbackButton.classList.toggle('active')
+languageItem.forEach(function (element) {
+    element.addEventListener('click', function() {
+        remuveActiveClasses()
+        element.classList.add('bg-green-400')
+        element.classList.add('text-blue-300')
+    })
 })
