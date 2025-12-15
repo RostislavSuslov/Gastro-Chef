@@ -47,14 +47,6 @@ function removeActiveClassesLanguagesPanel() {
     })
 }
 
-
-
-
-
-
-
-
-
 languageItem.forEach(function (element) {
     element.addEventListener('click', function (event) {
         event.preventDefault()
@@ -63,7 +55,6 @@ languageItem.forEach(function (element) {
         element.classList.add('text-blue-300')
     })
 })
-
 
 const categoryLink = document.querySelectorAll('.category-link')
 
@@ -90,11 +81,7 @@ categoryLink.forEach(function (item) {
         item.classList.add('text-green-400')
         item.querySelector('span').classList.remove('hidden')
     })
-
-
 })
-
-
 
 // const link = document.querySelector('.category-link');
 
@@ -102,13 +89,12 @@ categoryLink.forEach(function (item) {
 //     document.addEventListener('click', (event) => {
 //         const withinBoundaries = event.composedPath().includes(item);
 //         console.log(withinBoundaries);
-        
+
 //         if (!withinBoundaries) {
 //             removeActiveClassesCategoryNav()
 //         }
 //     })
 // })
-
 
 // document.addEventListener('click', (event) => {
 //     const withinBoundaries = event.composedPath().includes(link);
@@ -117,6 +103,16 @@ categoryLink.forEach(function (item) {
 //         removeActiveClassesCategoryNav()
 //     }
 // })
+
+
+
+
+
+
+
+
+
+
 const circularMenu = document.querySelector('.circular-menu')
 const circularMenuButton = document.querySelector('.circular-menu__button')
 const circularMenuIcon = document.querySelector('.circular-menu__icon use')
@@ -131,6 +127,24 @@ circularMenuButton.addEventListener('click', function () {
     }
 })
 
- 
+document.addEventListener('click', function (event) {
+    const isClickInsideCircular = circularMenu.contains(event.target) ||
+        circularMenuButton.contains(event.target);
 
- 
+    const isClickInsideCategory = Array.from(categoryLink).some(link =>
+        link.contains(event.target));
+
+    if (!isClickInsideCircular && circularMenu.classList.contains('active')) {
+        circularMenu.classList.remove('active');
+        circularMenuIcon.setAttribute('href', '#icon-feedback-button');
+    }
+
+    if (!isClickInsideCategory) {
+        const hasActiveCategory = Array.from(categoryLink).some(link =>
+            link.classList.contains('text-green-400'));
+
+        if (hasActiveCategory) {
+            removeActiveClassesCategoryNav();
+        }
+    }
+});
