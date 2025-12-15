@@ -7,7 +7,7 @@ const burger = document.querySelector('#burger')
 const mobileContainer = document.querySelector('#mobile-container')
 const body = document.querySelector('body')
 
-burger.addEventListener('click', () => {
+burger.addEventListener('click', function () {
     burger.classList.toggle('is-active')
     mobileContainer.classList.toggle('hidden')
     body.classList.toggle('overflow-hidden')
@@ -117,3 +117,20 @@ categoryLink.forEach(function (item) {
 //         removeActiveClassesCategoryNav()
 //     }
 // })
+const circularMenu = document.querySelector('.circular-menu')
+const circularMenuButton = document.querySelector('.circular-menu__button')
+const circularMenuIcon = document.querySelector('.circular-menu__icon use')
+
+circularMenuButton.addEventListener('click', function () {
+    circularMenu.classList.toggle('active')
+
+    if (circularMenu.classList.contains('active')) {
+        circularMenuIcon.setAttribute('href', '#icon-close')
+    } else {
+        circularMenuIcon.setAttribute('href', '#icon-feedback-button')
+    }
+})
+
+ 
+
+ 
