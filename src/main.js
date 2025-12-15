@@ -7,7 +7,7 @@ const burger = document.querySelector('#burger')
 const mobileContainer = document.querySelector('#mobile-container')
 const body = document.querySelector('body')
 
-burger.addEventListener('click', function() {
+burger.addEventListener('click', function () {
     burger.classList.toggle('is-active')
     mobileContainer.classList.toggle('hidden')
     body.classList.toggle('overflow-hidden')
@@ -41,7 +41,7 @@ const swiper = new Swiper('.swiper', {
 const languageItem = document.querySelectorAll('.language-item')
 
 function remuveActiveClasses() {
-    languageItem.forEach(function(item) {
+    languageItem.forEach(function (item) {
         item.classList.remove('bg-green-400')
         item.classList.remove('text-blue-300')
     })
@@ -49,24 +49,27 @@ function remuveActiveClasses() {
 
 
 languageItem.forEach(function (element) {
-    element.addEventListener('click', function() {
+    element.addEventListener('click', function () {
         remuveActiveClasses()
         element.classList.add('bg-green-400')
         element.classList.add('text-blue-300')
     })
 })
 
+const circularMenu = document.querySelector('.circular-menu')
+const circularMenuButton = document.querySelector('.circular-menu__button')
+const circularMenuIcon = document.querySelector('.circular-menu__icon use')
 
-const items = document.querySelectorAll('.circle a');
+circularMenuButton.addEventListener('click', function () {
+    circularMenu.classList.toggle('active')
 
-for(var i = 0, l = items.length; i < l; i++) {
-  items[i].style.left = (50 - 35*Math.cos(-0.5 * Math.PI + 1*(0.5/l)*i*Math.PI)).toFixed(4) + "%";
-  items[i].style.bottom = (50 + 35*Math.sin(-0.5 * Math.PI + 1*(0.5/l)*i*Math.PI)).toFixed(4) + "%";
-}
-
-const feedbackButton = document.querySelector('#feedback-button')
-console.log(feedbackButton);
-
-feedbackButton.addEventListener('click', function() {
-    feedbackButton.classList.toggle('active')
+    if (circularMenu.classList.contains('active')) {
+        circularMenuIcon.setAttribute('href', '#icon-close')
+    } else {
+        circularMenuIcon.setAttribute('href', '#icon-feedback-button')
+    }
 })
+
+ 
+
+ 
