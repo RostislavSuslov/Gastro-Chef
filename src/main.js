@@ -106,13 +106,6 @@ categoryLink.forEach(function (item) {
 
 
 
-
-
-
-
-
-
-
 const circularMenu = document.querySelector('.circular-menu')
 const circularMenuButton = document.querySelector('.circular-menu__button')
 const circularMenuIcon = document.querySelector('.circular-menu__icon use')
@@ -148,3 +141,31 @@ document.addEventListener('click', function (event) {
         }
     }
 });
+
+const tabsBtn = document.querySelectorAll('[data-content-id]')
+const tabsContent = document.querySelectorAll('.tab-content')
+
+function removeActiveNavTabs() {
+    tabsBtn.forEach(function (btn) {
+        btn.classList.remove('active')
+    })
+}
+
+function hiddenActiveTabs() {
+    tabsContent.forEach(function(content) {
+        content.classList.remove('show')
+    })
+}
+
+tabsBtn.forEach(function (btn) {
+    btn.addEventListener('click', function() {
+        removeActiveNavTabs()
+        btn.classList.add('active')
+        
+        const id = btn.getAttribute('data-content-id')
+        const content = document.getElementById(id)
+
+        hiddenActiveTabs()
+        content.classList.add('show')
+    })
+})
