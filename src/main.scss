@@ -233,3 +233,15 @@
         display: block;
     }
 }
+
+.program__category {
+    .active {
+        background-color: var(--color-green-400);
+    }
+}
+
+.program__week {
+     .active {
+        background-color: var(--color-green-400);
+    }
+}
