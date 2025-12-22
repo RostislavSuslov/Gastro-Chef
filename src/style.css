@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
+ 
+
 @font-face {
-    font-family: 'Comfortaa';
+    font-family: "Comfortaa";
     font-style: normal;
     font-weight: 300;
     font-display: swap;
@@ -9,7 +11,7 @@
 }
 
 @font-face {
-    font-family: 'Comfortaa';
+    font-family: "Comfortaa";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -17,7 +19,7 @@
 }
 
 @font-face {
-    font-family: 'Comfortaa';
+    font-family: "Comfortaa";
     font-style: normal;
     font-weight: 700;
     font-display: swap;
@@ -70,8 +72,8 @@
     --color-red-500: #FE3666;
     --color-gray-950: #020202;
 
-    --font-comfortaa: Comfortaa, sans-serif;
-    --font-montserrat: Montserrat, sans-serif;
+    --font-comfortaa: "Comfortaa", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
 
     --container-6xl: calc(73.75rem + 160px);
     --container-2xl: calc(43.125rem + 40px);
