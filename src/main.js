@@ -335,3 +335,22 @@ const programArr = [
         express_eit: {},
     },
 ]
+
+
+
+
+const installAccordion = () => {
+    const accordionQuestions = document.querySelectorAll('.accordion-question')
+
+    accordionQuestions.forEach(question => {
+        question.addEventListener('click', ()=> {
+            const accordionItem = question.closest('.accordion-item')
+            const accordionAnswer = accordionItem.querySelector('.accordion-answer')
+            
+            question.classList.toggle('accordion-question_active')
+            accordionAnswer.classList.toggle('accordion-answer_show')
+        })
+    })
+}
+
+installAccordion()
