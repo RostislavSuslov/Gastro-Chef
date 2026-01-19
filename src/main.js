@@ -339,17 +339,37 @@ const programArr = [
 
 
 
-const installAccordion = () => {
-    const accordionQuestions = document.querySelectorAll('.accordion-question')
+// const installAccordion = () => {
+//     const accordionQuestions = document.querySelectorAll('.accordion-question')
 
-    accordionQuestions.forEach(question => {
-        question.addEventListener('click', ()=> {
-            const accordionItem = question.closest('.accordion-item')
-            const accordionAnswer = accordionItem.querySelector('.accordion-answer')
+//     accordionQuestions.forEach((question, index, array) => {
+//         console.log(array);
+        
+//         question.addEventListener('click', ()=> {
+//             const accordionItem = question.closest('.accordion-item')
+//             const accordionAnswer = accordionItem.querySelector('.accordion-answer')
             
-            question.classList.toggle('accordion-question_active')
-            accordionAnswer.classList.toggle('accordion-answer_show')
-        })
+//             question.classList.toggle('accordion-question_active')
+//             accordionAnswer.classList.toggle('accordion-answer_show')
+//         })
+//     })
+// }
+
+// installAccordion()
+
+const installAccordion = () => {
+    const accordion = document.querySelector('.accordion')
+
+    accordion.addEventListener('click', (event)=> {
+        const accordionQuestion =  event.target.closest('.accordion-question')
+        if (!accordionQuestion) return
+       
+        console.log('next code');
+        const accordionItem = accordionQuestion.closest('.accordion-item')
+        const accordionAnswer = accordionItem.querySelector('.accordion-answer')
+        
+        accordionQuestion.classList.toggle('accordion-question_active')
+        accordionAnswer.classList.toggle('accordion-answer_show')
     })
 }
 
